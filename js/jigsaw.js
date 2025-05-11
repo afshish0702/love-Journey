@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
           realImageContainer.style.marginTop = "30px";
   
           const realImage = document.createElement("img");
-          realImage.src = "/assets/jigsaw.png";
+          realImage.src = "./assets/jigsaw.png";
           realImage.alt = "Love Image";
           realImage.style.width = "420px";
           realImage.style.border = "6px solid #ff69b4";
