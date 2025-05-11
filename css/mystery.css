@@ -1,0 +1,123 @@
+   body {
+  margin: 0;
+  font-family: 'Cinzel Decorative', cursive;
+  background: radial-gradient(circle, #1b1b2f, #000);
+  overflow: hidden;
+  color: white;
+}
+
+#typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  padding: 0 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+}
+
+#puzzle-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.lock-area {
+  margin: 20px auto;
+}
+
+.lock {
+  width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.hints-area {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.hint-object {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.hint-object.clicked {
+  transform: scale(1.5);
+  color: #f39c12;
+}
+
+.input-area {
+  margin-top: 2rem;
+}
+
+#passcode {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  width: 250px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+#submit-btn {
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#submit-btn:hover {
+  background: #c0392b;
+  transform: scale(1.1);
+}
+
+.hint{
+    padding-top: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #222;
+  padding: 2rem;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  animation: pop 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

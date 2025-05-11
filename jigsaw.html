@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arrange Your Love</title>
+  <link rel="stylesheet" href="./css/jigsaw.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel+Decorative&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Click to Start Overlay -->
+<div id="start-overlay" style="
+position: fixed;
+top: 0; left: 0;
+width: 100vw; height: 100vh;
+background: rgba(0, 0, 0, 0.8);
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 24px;
+font-family: 'Cursive', sans-serif;
+z-index: 1000;
+cursor: pointer;
+">
+<div class="overlay-content" style="text-align: center;">
+  💖 Welcome My Love... <br/>
+  <small>(Click anywhere to begin your journey 💖)</small>
+</div>
+</div>
+
+<!-- Background music -->
+<audio id="background-music" loop>
+<source src="./assets/puzzle3.mp3" type="audio/mp3">
+</audio>
+
+
+  <div class="background-animation"></div>
+  <div id="start-overlay">
+    <div class="overlay-content">
+    
+    </div>
+  </div>
+  
+  <div id="typewriter-container">
+    <p id="typewriter-text"></p>
+  </div>
+
+  <div id="puzzle-container" class="hidden">
+    <div id="timer">Time left: 120s</div>
+    <div class="puzzle-grid" id="puzzle-grid"></div>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content" id="modal-message"></div>
+  </div>
+
+  <script src="./js/jigsaw.js"></script>
+</body>
+</html>

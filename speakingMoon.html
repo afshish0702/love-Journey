@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Words</title>
+  <link rel="stylesheet" href="./css/speakingMoon.css" />
+</head>
+
+<body>
+  <div class="night-sky">
+    <canvas id="bgCanvas"></canvas>
+    <div class="moon"></div>
+    <button id="redirectButton">✨ Continue the Journey ✨</button>
+  </div>
+
+<script>
+ const moon = document.querySelector('.moon');
+
+const fortunes = [
+  "तुम्हारा स्वागत है, घबराओ नहीं मैं चाँद बोल रही हु, अगर तुम मुझसे बात कर के अपने बारे में जानना चाहती हो तो पहले मुझे तुम अपना नाम बताओ।",
+  "अरे वाह अलीशा तो बहोत अच्छा नाम है, मैं अपनी शक्तियों से देख पा रही हु की तुम एक बहोत ही खूबसूरत लड़की हो, तुम सच में सबसे सुन्दर हो और तुम्हारा दिल भी उतना ही साफ़ है, मैं ये देख रही हु की तुम्हारे दिल में किसी के लिए बहोत सारा प्यार छुपा हुआ है अगर मैं सही हु तो क्या तुम मुझे उसका नाम बता सकती हो|",
+  "अलीशा अब मैं तुम्हारे बारे में जो भी बताने वाली हु वो बहोत ही ध्यान से सुनो, मैं देख रही हु की तुम आफताब से बहोत ज्यादा प्यार करती हो और तुम उस्से शादी करना चाहती हो, जितना मैं समझ पा रही हु उस्से लगता है की तुम दोनों की शादी बहोत जल्दी होने वाली है और तुम्हारे जीवन में ढेर सारी खुशियां आने वाली है, मेरा तुम्हे ये सलाह है की तुम दोनों एक दूसरे को कभी मत छोड़ना और हमेसा एक दूसरे का साथ देना तुम दोनों की सारी इच्छाएं जल्द ही पूरी होंगी, और मैं तुमसे आखरी बात बताने वाली हु अलीशा, आफताब तुमसे बहोत प्यार करता है सबसे ज्यादा वो बस तुम्हे ही प्यार करता है तुम उसे कभी मत छोड़ना, अगर तुम्हे मेरी बात पसंद आयी तो तुम्हे बहोत बहोत धन्यवाद् , और मेरा एक आखरी बात मानो नीचे वाले बटन को दबाओ,  तुम्हारे लिए आफताब ने कुछ बहोत ख़ास तोहफा भेजा है।",
+];
+let selectedVoice = null;
+
+// Load voices and choose Microsoft Kalpana
+function loadVoicesAndStartSequence() {
+  const voices = speechSynthesis.getVoices();
+  console.log("Available voices:", voices);
+
+  selectedVoice = voices.find(v => v.name === "Microsoft Kalpana - Hindi (India)");
+  
+  if (!selectedVoice) {
+    alert("Microsoft Kalpana voice not found. Try reloading the page.");
+    return;
+  }
+
+  // Start the sequence once the voice is ready
+  speakFortunesSequentially(0);
+}
+
+// Speak one statement at a time with a 3-second pause
+function speakFortunesSequentially(index) {
+  if (index >= fortunes.length) return;
+
+  const utterance = new SpeechSynthesisUtterance(fortunes[index]);
+  utterance.voice = selectedVoice;
+  utterance.lang = 'hi-IN';
+  utterance.pitch = 1;
+  utterance.rate = 1;
+
+  // Glow moon during speaking
+  utterance.onstart = () => {
+    moon.style.boxShadow = '0 0 60px 20px #fff';
+  };
+
+  utterance.onend = () => {
+    moon.style.boxShadow = '0 0 30px #fff';
+    setTimeout(() => speakFortunesSequentially(index + 1), 3000); // 3-second delay before next
+  };
+
+  speechSynthesis.speak(utterance);
+}
+
+// Start when page is loaded
+window.onload = () => {
+  if (speechSynthesis.getVoices().length !== 0) {
+    loadVoicesAndStartSequence();
+  } else {
+    speechSynthesis.onvoiceschanged = loadVoicesAndStartSequence;
+  }
+};
+</script>
+
+  <script src="./js/speakingMoon.js"></script>
+</body>
+
+</html>

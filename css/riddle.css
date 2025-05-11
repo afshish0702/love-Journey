@@ -1,0 +1,113 @@
+/* styles.css */
+body {
+    background-color: black;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #bomb-section, #riddle-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  #bomb-image {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  #bomb-timer {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: red;
+  }
+  
+  #riddle-section {
+    display: none;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+    width: 250px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0f0;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0c0;
+  }
+  
+  #explosion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  #explosion img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  
+  .modal-content {
+    background-color: #111;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #0f0;
+    color: #0f0;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save Your Love</title>
+  <link rel="stylesheet" href="./css/riddle.css">
+</head>
+<body>
+  <div id="bomb-section">
+    <img id="bomb-image" src="./assets/bomb.png" alt="Realistic Bomb">
+    <p id="story"></p>
+    <div id="bomb-timer">03:00</div>
+  </div>
+
+  <div id="riddle-section">
+    <p id="riddle-text"></p>
+    <input type="text" id="answer" placeholder="Your answer...">
+    <button onclick="checkAnswer()">Submit</button>
+  </div>
+
+  <div id="explosion">
+    <img src="./assets/explosion.gif" alt="Explosion">
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <audio id="tick-sound" src="./assets/tik.mp3" loop></audio>
+  <audio id="explosion-sound" src="./assets/explosion.mp3"></audio>
+  <audio id="typing-sound" src="./assets/typing-effect.mp3" preload= "auto"></audio>
+  <audio id="clapping-sound" src="./assets/clapping-sound.mp3"></audio>
+
+
+
+  <script src="./js/riddle.js"></script>
+</body>
+</html>

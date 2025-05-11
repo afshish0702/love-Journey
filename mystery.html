@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mystery of Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/mystery.css">
+</head>
+<body>
+  <audio id="bg-music" src="./assets/mystery-music.mp3" autoplay loop></audio>
+
+  <div id="typewriter-container">
+    <p id="typewriter-text"></p></p>
+  </div>
+
+  <div id="puzzle-content" style="display: none">
+    <div class="lock-area">
+        <img id="lock-img" src="./assets/lock.png" alt="Locked" class="lock" />
+    </div>
+
+    <div class="hints-area">
+      <div class="hint-object" data-hint="Look under the stars...">🌟</div>
+      <div class="hint-object" data-hint="The rose never lies...">🌹</div>
+      <div class="hint-object" data-hint="Inside the diary is a secret...">📖</div>
+      <div class="hint-object" data-hint="Sometimes love hides in plain sight">💌</div>
+      <div class="hint-object" data-hint="Your heart knows the answer">❤️</div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="passcode" placeholder="Enter Passcode..." />
+        <button id="submit-btn">Unlock 🔓</button>
+    </div>
+    <div id="hint" style="margin-top: 20px;">Hint:- Listen your Heart It always redirect You Correct path </div>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content" id="modal-message"></div>
+  </div>
+
+  <audio id="bg-music" src="./assets/mystery-music.mp3" autoplay loop></audio>
+
+  <script src="./js/mystery.js"></script>
+</body>
+</html>

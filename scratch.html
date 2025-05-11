@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Cards</title>
+  <link rel="stylesheet" href="./css/scratch.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🎁 Scratch to Reveal Your Secret Love Gift…</h1>
+    <div class="scratch-grid">
+      <!-- Scratch Cards 3x3 -->
+      <div class="scratch-area">
+        <canvas id="scratchCanvas1" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage1">
+          💖 You've won: Unlimited Hugs and Kisses! 😘
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas2" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage2">
+          💖 You've won: A Heartfelt Kiss! 😘
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas3" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage3">
+          💖 You've won: A Cozy Hug! 🤗
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas4" widt  h="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage4">
+          💖 You've won: Forever Together! 💞
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas5" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage5">
+          💖 You've won: A Romantic Date Night! 🌹
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas6" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage6">
+          💖 You've won: A Special Love Letter! 💌
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas7" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage7">
+          💖 You've won: Endless Memories Together! 🥰
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas8" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage8">
+          💖 You've won: A Surprise Gift! 🎁
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+
+      <div class="scratch-area">
+        <canvas id="scratchCanvas9" width="300" height="150"></canvas>
+        <div class="message" id="hiddenMessage9">
+          💖 You've won: A Dream Come True! 🌙
+          <br />
+          <button onclick="goToNext()">Claim Surprise</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal HTML -->
+<div id="gifModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalGif" src="" alt="Love GIF" />
+  </div>
+</div>
+
+  <script src="./js/scratch.js"></script>
+</body>
+</html>

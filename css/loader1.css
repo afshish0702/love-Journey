@@ -1,0 +1,113 @@
+/* Background with animated gradient */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', cursive;
+    background: linear-gradient(-45deg, #ffe6f0, #ffc6e0, #fff6f9, #ffd9ec);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Gradient animation */
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Main container */
+  .container {
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .teddy {
+    width: 250px;
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .quote {
+    font-size: 1.8rem;
+    color: #ff66a3;
+    margin: 20px 0;
+  }
+  
+  /* Heart Button */
+  .heart-btn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #ff4081;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 64, 129, 0.4);
+  }
+  
+  .heart-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    transform: rotate(45deg);
+    animation: floatHearts 10s linear infinite;
+    opacity: 0.7;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: pink;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+  
+  @keyframes floatHearts {
+    0% {
+      transform: translateY(100vh) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
